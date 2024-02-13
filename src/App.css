@@ -12,7 +12,10 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.navigatMenu{
+  position: fixed;
+  height: 40px;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +38,75 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* ********************************************************* */
+/* navigation style********************* */
+.styleMenu{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  gap: 10px;
+}
+.styleMenu>a{
+  text-decoration: none;
+  color: black;
+}
+.listNavShop>a{
+  text-decoration: none;
+  color: rgb(251, 247, 247);
+  font-size: 15px;
+}
+/* ************************************************ */
+/* productsPage**** */
+.navBarShopping{
+  position: fixed;
+  margin-top: 40px;
+
+}
+.listBox{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: 10px;
+  padding-top: 80px;
+}
+.itemBox{
+  width: 80%;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: 20px;
+}
+.imageItem{
+  width: 20%;
+  height: 250px;
+  overflow: hidden;
+  padding: 5px;
+  border-radius: 5px;
+}
+.imageItem>img{
+  width: 100% !important;
+  height: 100%;
+  object-fit: cover !important;
+}
+.descItem{
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-right: 5px;
+}
+/* ******************************************
+caaaaaaaaaaaaaaaaart */
+.cartStyle{
+  padding-top: 120px !important;
 }
