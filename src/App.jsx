@@ -26,7 +26,7 @@ function App() {
     <div className="App ">
       <dataContext.Provider value={[dataList , setDataList]}>
     <Router>
-      <div className='border border-danger navigatMenu col-12'>
+      <div className=' navigatMenu col-12'>
         <Navigat/>
       </div>
       <Routes>

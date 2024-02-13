@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
+import { NewShopContext } from "../../context/newShopContext";
 
 export const Products = ({ listProducts }) => {
   const {cartItems , addToCart , removeFromCart} = useContext(ShopContext)
+  // const {cartItems , addToCart , removeFromCart} = useContext(NewShopContext)
 
   return (
     <div className=" listBox">
@@ -12,10 +14,10 @@ export const Products = ({ listProducts }) => {
           const isInCart = cartItems?.some((item)=>item.id === itemId)
           return (
             <div className="itemBox border border-dark" key={item.id}>
-              <figure className="imageItem">
-                <img src={item.image} />
+              <figure className="imageItem col-3">
+                <img src={item.image} className="col-8"/>
               </figure>
-              <div className="descItem">
+              <div className="descItem col-9">
                 <h2 className="mt-2">
                   <span className="text-primary h5">title:</span>
                   {item.title.slice(0 , 10)}

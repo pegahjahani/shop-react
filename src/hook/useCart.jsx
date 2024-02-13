@@ -1,12 +1,7 @@
-import { createContext , useState} from "react";
+import { useState } from "react"
 
-
-
-export const ShopContext = createContext(null)
-
-export const ShopContextProvider = (props)=>{
+export const UseCart = ()=>{
     const [cartItems , setCartItems] = useState([])
-    const [emptyCart , setEmptyCart] = useState(true)
 
     const addToCart = (_id)=>{
         if(!cartItems?.find((item)=>item.id === _id))
@@ -15,8 +10,8 @@ export const ShopContextProvider = (props)=>{
         if(item.id ===_id)
         return{...item , count : item.count + 1}
     else return item
-}))
-setEmptyCart(false)
+    }))
+        console.log('cartItems' , cartItems);
     }
 
     const removeFromCart = (_id)=>{
@@ -25,11 +20,8 @@ setEmptyCart(false)
                 return {...item , count :item.count === 0 ? 0 : item.count - 1}
             }else{return item}
         }))
+        console.log('cartItemsrenove' , cartItems);
 
     }
-    
-    const contextValue = {cartItems , addToCart , removeFromCart , emptyCart}
-    return(
-        <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
-    )
+    return {cartItems , addToCart , removeFromCart}
 }

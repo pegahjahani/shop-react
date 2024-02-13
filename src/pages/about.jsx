@@ -12,16 +12,6 @@ export const About =()=>{
         <div className="col-12 bg-success pagesStyle">
             ................
             <h1>about ::</h1>
-            {/* <div>
-            {Object.keys(dataCont).map((item , index)=>{
-                return(
-                    <div key={index}>
-                        <div><span>userName:</span>{dataCont[item].username}</div>
-                    </div>
-                )
-                
-            })}
-        </div> */}
         </div>
     )
 }
