@@ -18,23 +18,9 @@ export const Home =()=>{
     })
   
     return(
-        <div>
+        <div className="col-12 bg-primary pagesStyle">
             <h1>home:{selector.userName}</h1>
-            {Object.keys(dataCont).map((item , index)=>{
-                return(
-                    <div key={index}>
-                        <div><span>name:</span>{dataCont[item].name}</div>
-                    </div>
-                )
-                
-            })}
-     
-     <div>
-        <input type="text" onChange={(event)=>{setNewUsername(event.target.value)}} />
-        <button onClick={click}>login</button>
-        <button onClick={()=>{dispatch(logOut())}}>logout</button>
-
-     </div>
+        
         </div>
     )
 }

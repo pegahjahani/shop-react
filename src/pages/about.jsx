@@ -9,10 +9,10 @@ export const About =()=>{
         setDataCont(data[0])
     })
     return(
-        <div>
-            
-            <div>
+        <div className="col-12 bg-success pagesStyle">
+            ................
             <h1>about ::</h1>
+            {/* <div>
             {Object.keys(dataCont).map((item , index)=>{
                 return(
                     <div key={index}>
@@ -21,7 +21,7 @@ export const About =()=>{
                 )
                 
             })}
-        </div>
+        </div> */}
         </div>
     )
 }
