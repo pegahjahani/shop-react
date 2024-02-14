@@ -6,8 +6,7 @@ import { NavBar } from "../components/navProducts";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ShopContextProvider } from "../context/shopContext";
-import { PlusCarts } from "./shop/plusCarts";
-import { NewShopContextProvider } from "../context/newShopContext";
+
 
 export const Shoping = () => {
   const selector = useSelector((state) => state.userName);
@@ -21,7 +20,7 @@ export const Shoping = () => {
   }, []);
   return (
     <div>
-      {/* <NewShopContextProvider> */}
+
       <ShopContextProvider>
         <div className="navBar navBarShopping col-12">
           <NavBar />
@@ -32,10 +31,9 @@ export const Shoping = () => {
             path="/Carts"
             element={<Carts listProducts={listProducts} />}
           />
-          {/* <Route path="/plusCarts" element={<PlusCarts />} /> */}
         </Routes>
       </ShopContextProvider>
-      {/* </NewShopContextProvider> */}
+  
     </div>
   );
 };

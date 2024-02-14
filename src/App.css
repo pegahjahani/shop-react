@@ -113,3 +113,17 @@ caaaaaaaaaaaaaaaaart */
 .cartStyle{
   padding-top: 120px !important;
 }
+/* **********************************************
+cart-items-count */
+.cart-items-count {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-boder-radius:9px;
+  border-radius: 9px;
+  -moz-border-radius:9px;
+  font-style: 12px;background-color: #ff0000;
+  color: white;
+  padding: 0 5px;
+  vertical-align: top;
+  margin-left: 0px;
+}

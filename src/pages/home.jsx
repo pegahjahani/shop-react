@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { dataContext } from "../App"
 import { login , logOut } from "../components/store"
 import {useDispatch , useSelector} from "react-redux"
+import { Welcome } from "../components/welcom"
 
 export const Home =()=>{
     const data = useContext(dataContext)
@@ -18,9 +19,9 @@ export const Home =()=>{
     })
   
     return(
-        <div className="col-12 bg-primary pagesStyle">
+        <div className="col-12 pagesStyle">
+            <Welcome/>
             <h1>home:{selector.userName}</h1>
-        
         </div>
     )
 }

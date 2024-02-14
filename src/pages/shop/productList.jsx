@@ -4,7 +4,6 @@ import { NewShopContext } from "../../context/newShopContext";
 
 export const Products = ({ listProducts }) => {
   const {cartItems , addToCart , removeFromCart} = useContext(ShopContext)
-  // const {cartItems , addToCart , removeFromCart} = useContext(NewShopContext)
 
   return (
     <div className=" listBox">
