@@ -7,6 +7,7 @@ export const ShopContext = createContext(null)
 export const ShopContextProvider = (props)=>{
     const [cartItems , setCartItems] = useState()
     const [emptyCart , setEmptyCart] = useState(false)
+    console.log('cartssss' , cartItems);
     useEffect(()=>{
         const data = localStorage.getItem('setCartItemInLocalStorage')
         setCartItems(!!JSON.parse(data) ? JSON.parse(data) : [] )
@@ -16,16 +17,19 @@ export const ShopContextProvider = (props)=>{
         localStorage.setItem('setCartItemInLocalStorage' , JSON.stringify(cartItems))
     },[cartItems])
     const clearCarts = ()=>{
-        setCartItems()
+        setCartItems([])
+        setEmptyCart(false) 
         localStorage.removeItem('setCartItemInLocalStorage')
-        
       }
-    const addToCart = (_id)=>{
+    const addToCart = (_id , _price)=>{
         if(!cartItems?.find((item)=>item.id === _id))
-        setCartItems([...cartItems , {id: _id , count : 1}])
+        setCartItems([...cartItems , {id: _id , count : 1 , price :_price}])
     else setCartItems(cartItems?.map((item)=>{
         if(item.id ===_id)
-        return{...item , count : item.count + 1}
+        return{...item , count : item.count + 1, price : cartItems?.reduce((prev, current)=>{
+            return  prev + current.price
+        
+          } , _price)}
     else return item
 }))
 setEmptyCart(true)

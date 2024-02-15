@@ -6,7 +6,7 @@ import { ShopContext } from "../context/shopContext"
 
 
 export const NavBar = ()=>{
-    const {cartItems} = useContext(ShopContext)
+    const {cartItems , emptyCart} = useContext(ShopContext)
     const itemCount = cartItems?.reduce((prev, current)=>{
       return  prev + current.count
 
@@ -14,7 +14,7 @@ export const NavBar = ()=>{
     return(
         <div className="navbar navbar-dark bg-dark navbar-expend-lg">
             <div className="container">
-                <a className="navbar-brand">shopping</a>
+                <a className="navbar-brand">my shop</a>
                 <ul className="navbar-nav styleMenu">
                     <li className="nav-item listNavShop">
                         <Link to="/shoping">shop</Link> 
@@ -23,7 +23,7 @@ export const NavBar = ()=>{
                         <Link to="/shoping/Carts" title="carts">
                             <FontAwesomeIcon icon={faShoppingCart}/>
                            {
-                            itemCount===0 ?
+                            itemCount===0 || emptyCart===false ?
                             null :
                             <span className="cart-items-count">{itemCount}</span>
                            }

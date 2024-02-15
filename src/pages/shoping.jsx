@@ -20,7 +20,6 @@ export const Shoping = () => {
   }, []);
   return (
     <div>
-
       <ShopContextProvider>
         <div className="navBar navBarShopping col-12">
           <NavBar />

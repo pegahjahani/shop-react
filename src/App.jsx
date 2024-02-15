@@ -10,6 +10,8 @@ import { Provider } from 'react-redux';
 import { store } from './components/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+ 
+
 export const dataContext = createContext()
 function App() {
   const [dataList , setDataList] = useState({})
@@ -30,9 +32,9 @@ function App() {
         <Navigat/>
       </div>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/Shoping/*" element={<Shoping/>}/>
+        {/* <Route path="/" element={<Home/>}/> */}
+        {/* <Route path="/about" element={<About/>}/> */}
+        <Route path="/*" element={<Shoping/>}/>
       </Routes>
     </Router>
     </dataContext.Provider>

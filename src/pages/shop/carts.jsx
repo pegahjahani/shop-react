@@ -1,16 +1,21 @@
 import { React, useContext, useState } from "react";
 import { ShopContext } from "../../context/shopContext";
 
+
 export const Carts = ({ listProducts }) => {
   const { cartItems , emptyCart , clearCarts } = useContext(ShopContext);
+  const itemPrice = cartItems?.reduce((prev, current)=>{
+    return  prev + current.price
+
+  } , 0)
   
   return (
     <>
-      {  emptyCart===true && cartItems[0]?.count===0 ? (
+      {  emptyCart===false ?  (
        <div className="cartStyle h-100">
        <h2>your carts is empty !!!</h2>
      </div>
-      ) : (
+      ): (
         
          <div className=" col-12 d-flex justify-content-center gap-3  flex-wrap cartStyle">
          {listProducts?.map((item) => {
@@ -28,15 +33,21 @@ export const Carts = ({ listProducts }) => {
                      count :
                      {cartItems?.filter((row) => row.id === item.id)[0]?.count}
                    </span>
+                   <span className="col-12">
+                     price :
+                     
+                    {cartItems?.filter((row) => row.id === item.id)[0]?.price}
+                     
+                   </span>
                  </div>
                </div>
              );
-         })}
+            })}
+            <button className="btn btn-primary my-3" onClick={clearCarts}>clearCarts</button>
        </div>
+      
       )}
-      {
-        <button className="btn btn-primary my-3" onClick={clearCarts}>clearCarts</button>
-      }
+     
     </>
   );
 };

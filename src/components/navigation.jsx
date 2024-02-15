@@ -5,9 +5,9 @@ const Navigat = ()=>{
         <div className="navbar navbar-dark bg-light navbar-expend-lg">
             <div className="container">
             <nav className="navbar-nav navbar-brand styleMenu">
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/shoping">Shoping</Link>
+            {/* <Link to="/">Home</Link>
+            <Link to="/about">About</Link> */}
+            <Link to="/">Shoping</Link>
         </nav>
             </div>
        
