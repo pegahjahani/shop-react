@@ -18,6 +18,7 @@
 .navigatMenu{
   position: fixed;
   height: 40px;
+  
 }
 .App-header {
   background-color: #282c34;
@@ -112,6 +113,8 @@
 caaaaaaaaaaaaaaaaart */
 .cartStyle{
   padding-top: 120px !important;
+  flex-direction: column !important;
+
 }
 /* **********************************************
 cart-items-count */
@@ -126,4 +129,32 @@ cart-items-count */
   padding: 0 5px;
   vertical-align: top;
   margin-left: 0px;
+}
+/* ****************************************formStyle******************* */
+.formStyle{
+ 
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formStyle>form{
+  min-height: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.formStyle>form>label{
+  display: flex;
+  justify-content: start;
+}
+.formStyle>form>input{
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  border: 1px solid rgb(136, 136, 136);
+  padding-left: 10px;
 }

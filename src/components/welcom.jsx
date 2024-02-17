@@ -1,7 +1,7 @@
 import { faClose } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect, useState } from "react"
-import { json } from "react-router-dom"
+
 
 
 export const Welcome = ()=>{

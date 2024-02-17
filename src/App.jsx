@@ -9,9 +9,13 @@ import axios from 'axios';
 import { Provider } from 'react-redux';
 import { store } from './components/store';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
- 
-
+const theme = createTheme();
 export const dataContext = createContext()
 function App() {
   const [dataList , setDataList] = useState({})
@@ -24,6 +28,7 @@ function App() {
     getData()
   } , [])
   return (
+    <ThemeProvider theme={theme}>
     <Provider store={store}>
     <div className="App ">
       <dataContext.Provider value={[dataList , setDataList]}>
@@ -32,14 +37,15 @@ function App() {
         <Navigat/>
       </div>
       <Routes>
-        {/* <Route path="/" element={<Home/>}/> */}
+        <Route path="/" element={<Home/>}/>
         {/* <Route path="/about" element={<About/>}/> */}
-        <Route path="/*" element={<Shoping/>}/>
+        <Route path="/shoping/*" element={<Shoping/>}/>
       </Routes>
     </Router>
     </dataContext.Provider>
     </div>
     </Provider>
+    </ThemeProvider>
   );
 }
 

@@ -1,27 +1,30 @@
 import { useContext, useEffect, useState } from "react"
-import { dataContext } from "../App"
-import { login , logOut } from "../components/store"
-import {useDispatch , useSelector} from "react-redux"
 import { Welcome } from "../components/welcom"
+import Button from '@mui/material/Button'
+import { Form } from "../components/form"
+import { HomeContext, HomeContextProvider } from "../context/homeContext"
+
 
 export const Home =()=>{
-    const data = useContext(dataContext)
-    const [dataCont , setDataCont] = useState([])
-    const dispatch = useDispatch()
-    const [newUsername , setNewUsername] = useState("")
-    const selector = useSelector((state)=>state.userName)
-    const click = ()=>{
-        dispatch(login({userName : newUsername}))
-    }
-
-    useEffect(()=>{
-        setDataCont(data[0])
-    })
+    
+  const [showForm , setShowForm]= useState(false)
   
     return(
-        <div className="col-12 pagesStyle">
+      <HomeContextProvider>
+          <div className="col-12 pagesStyle">
             <Welcome/>
-            <h1>home:{selector.userName}</h1>
+         <div className="col-12 container mt-3">
+            <div>
+                <h3>login for buy !</h3>
+            </div>
+            <Button className="col-2" style={{backgroundColor:'#016A70' , marginTop:'20px' , color:'white'}} onClick={()=>{setShowForm(true)}}>login</Button>
+         </div>
+        {
+            showForm===true &&  <div>
+            <Form setShowForm={setShowForm}/>
+         </div>
+        }
         </div>
+      </HomeContextProvider>
     )
 }

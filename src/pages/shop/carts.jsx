@@ -1,5 +1,6 @@
 import { React, useContext, useState } from "react";
 import { ShopContext } from "../../context/shopContext";
+import Button from '@mui/material/Button'
 
 
 export const Carts = ({ listProducts }) => {
@@ -8,6 +9,7 @@ export const Carts = ({ listProducts }) => {
     return  prev + current.price
 
   } , 0)
+  console.log('helloo');
   
   return (
     <>
@@ -17,7 +19,7 @@ export const Carts = ({ listProducts }) => {
      </div>
       ): (
         
-         <div className=" col-12 d-flex justify-content-center gap-3  flex-wrap cartStyle">
+         <div className=" col-12 d-flex justify-content-center align-items-center gap-3  flex-wrap cartStyle">
          {listProducts?.map((item) => {
            if (cartItems?.some((i) => i.id === item.id && i.count > 0))
              return (
@@ -43,7 +45,8 @@ export const Carts = ({ listProducts }) => {
                </div>
              );
             })}
-            <button className="btn btn-primary my-3" onClick={clearCarts}>clearCarts</button>
+           
+            <Button style={{backgroundColor:'red',color:'white'}} onClick={clearCarts}>remove carts</Button>
        </div>
       
       )}

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
-
-
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
 export const Products = ({ listProducts }) => {
   const {cartItems , addToCart , removeFromCart} = useContext(ShopContext)
 
@@ -34,10 +34,13 @@ export const Products = ({ listProducts }) => {
                   {item.price}
                 </p>
                 <div className="col-12 gap-5 d-flex justify-content-center align-items-center py-2">
-                <button className="btn btn-primary btn-sm text-white mb-2" onClick={()=>addToCart(item.id , item.price)}>+</button>
+                {/* <button className="btn btn-primary btn-sm text-white mb-2" >+</button> */}
+               <AddBoxIcon style={{backgroundColor:'darkblue' , color:'white'}} onClick={()=>addToCart(item.id , item.price)}/>
                 <span>{cartItems?.filter((row) => row.id === item.id)[0]?.count}</span>
                 {
-                  isInCart && <button className="btn btn-primary btn-sm text-white mb-2" onClick={()=>removeFromCart(item.id)}>-</button>
+                   isInCart && 
+                  
+                  <IndeterminateCheckBoxIcon style={{backgroundColor:'darkblue' , color:'white'}} onClick={()=>removeFromCart(item.id)}/>
                  
                 }
                 </div>
