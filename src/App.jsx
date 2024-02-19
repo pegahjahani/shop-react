@@ -2,7 +2,6 @@ import {react , createContext, useState, useEffect} from 'react';
 import Navigat from './components/navigation';
 import './App.css';
 import { Home } from './pages/home';
-import { About } from './pages/about';
 import { Shoping } from './pages/shoping';
 import { BrowserRouter as Router , Route , Routes } from 'react-router-dom';
 import axios from 'axios';
@@ -13,9 +12,9 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const theme = createTheme();
+
+
 export const dataContext = createContext()
 function App() {
   const [dataList , setDataList] = useState({})
@@ -28,7 +27,7 @@ function App() {
     getData()
   } , [])
   return (
-    <ThemeProvider theme={theme}>
+   
     <Provider store={store}>
     <div className="App ">
       <dataContext.Provider value={[dataList , setDataList]}>
@@ -38,14 +37,12 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        {/* <Route path="/about" element={<About/>}/> */}
         <Route path="/shoping/*" element={<Shoping/>}/>
       </Routes>
     </Router>
     </dataContext.Provider>
     </div>
     </Provider>
-    </ThemeProvider>
   );
 }
 

@@ -1,9 +1,19 @@
 {
-  "users": {
-    "id":1,
-    "name":"pegah",
-    "lastName":"jahani",
-    "userName": "pegah",
-    "password": "123456"
-  } 
+  "users": [
+    {
+      "id":1,
+      "name":"pegah",
+      "lastName":"jahani",
+      "userName": "pegah",
+      "password": "123456"
+    } ,
+    {
+      "id":2,
+      "name":"neda",
+      "lastName":"jahani",
+      "userName": "neda",
+      "password": "12345"
+    }
+
+  ]
 }
