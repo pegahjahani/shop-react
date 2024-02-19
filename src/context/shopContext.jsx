@@ -10,7 +10,6 @@ export const ShopContextProvider = (props) => {
   const [emptyCart, setEmptyCart] = useState(false);
   const [userData, setUserData] = useState([]);
   const [data, setData] = useState({ userName: "", password: "" });
-  const [registerData , setRegisterData] = useState({ firstName: '', lastName: '', userName: '', password: '' , confirmPassword:'' })
   const navigate = useNavigate();
 
 
@@ -96,15 +95,9 @@ export const ShopContextProvider = (props) => {
     }
     
   };
-  const registerForm = async (info) => {
-    let res = await axios.post('http://localhost:2000/users', JSON.parse(JSON.stringify(info)))
-    console.log('res', res);
-    if (res.status === 201) {
-        console.log(res.status);
-        setRegisterData(res.data)
-    }
-    
-};
+ 
+
+
 
   const contextValue = {
     cartItems,
@@ -118,10 +111,8 @@ export const ShopContextProvider = (props) => {
     login,
     data,
     setData,
-    logOut,
-    registerForm,
-    registerData,
-    setRegisterData
+    logOut
+    
   };
   return (
     <ShopContext.Provider value={contextValue}>
