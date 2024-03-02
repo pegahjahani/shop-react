@@ -14,7 +14,7 @@ export const NavBar = ()=>{
 
     } , 0)
     return(
-        <div className="navbar navbar-dark bg-dark navbar-expend-lg">
+        <div className="navbar navbar-dark  navbar-expend-lg navShop col-12 mt-2">
             <div className="container">
                 <h2 className="navbar-brand">{data.userName} shop</h2>
                 <ul className="navbar-nav styleMenu">

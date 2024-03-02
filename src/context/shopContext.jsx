@@ -12,7 +12,9 @@ export const ShopContextProvider = (props) => {
   const [data, setData] = useState({ userName: "", password: "" });
   const navigate = useNavigate();
 
-
+ useEffect(()=>{
+  getUserData();
+ } , [userData])
   useEffect(() => {
     getUserData();
     const localDataCarts = JSON.parse(localStorage.getItem("setCartItemInLocalStorage"));
@@ -74,6 +76,7 @@ export const ShopContextProvider = (props) => {
     const userData = await axios.get("http://localhost:2000/users");
     setUserData(userData.data);
   };
+
   const login = () => {
     const fullFildData =
       data?.password.trim().length > 0 && data?.userName.trim().length > 0;
@@ -87,8 +90,8 @@ export const ShopContextProvider = (props) => {
           navigate("/shoping");
           if(data !== undefined){
               localStorage.setItem("setuserData" , JSON.stringify(data))
-                setData({ userName: "", password: "" });
-        }
+            }
+            setData({ userName: "", password: "" });
           return true;
         }
       });

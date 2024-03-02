@@ -13,14 +13,16 @@ export const Form = ({ setShowForm }) => {
   return (
     
     <div className="container col-12 d-flex justify-content-center align-items-center mt-3">
+      
       <div className="formStyle col-8">
-        {!flag ? (
+        {flag===false ? (
           <form
             className="col-5"
             onSubmit={(event) => {
               event.preventDefault();
             }}
           >
+            
             <div className="col-12 d-flex justify-content-end px-3 align-items-center mt-3">
               <CloseIcon
                 onClick={() => {

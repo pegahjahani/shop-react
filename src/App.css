@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+ display: flex;
+ justify-content: center;
+ align-items: start;
+ flex-wrap: wrap;
+ min-height: 100vh;
+ color: white;
 }
 
 .App-logo {
@@ -12,13 +17,20 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-.pagesStyle{
+.pagesStyle {
   padding-top: 40px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid gray; */
+
 }
-.navigatMenu{
+.navigatMenu {
   position: fixed;
   height: 40px;
-  
+  top: 0 !important;
+
 }
 .App-header {
   background-color: #282c34;
@@ -46,30 +58,29 @@
 
 /* ********************************************************* */
 /* navigation style********************* */
-.styleMenu{
+.styleMenu {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   flex-direction: row !important;
   gap: 10px;
 }
-.styleMenu>a{
+.styleMenu > a {
   text-decoration: none;
   color: black;
 }
-.listNavShop>a{
+.listNavShop > a {
   text-decoration: none;
   color: rgb(251, 247, 247);
   font-size: 15px;
 }
 /* ************************************************ */
 /* productsPage**** */
-.navBarShopping{
+.navBarShopping {
   position: fixed;
   margin-top: 40px;
-
 }
-.listBox{
+.listBox {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -80,28 +91,27 @@
   gap: 10px;
   padding-top: 80px;
 }
-.itemBox{
+.itemBox {
   width: 80%;
   /* border: 1px solid black; */
   display: flex;
   justify-content: start;
   align-items: center;
   margin-top: 20px;
+  /* background-color: aliceblue; */
 }
-.imageItem{
+.imageItem {
   width: 20%;
   height: 250px;
   overflow: hidden;
   padding: 5px;
   border-radius: 5px;
 }
-.imageItem>img{
-
+.imageItem > img {
   height: 100%;
   object-fit: cover !important;
 }
-.descItem{
- 
+.descItem {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,34 +121,33 @@
 }
 /* ******************************************
 caaaaaaaaaaaaaaaaart */
-.cartStyle{
+.cartStyle {
   padding-top: 120px !important;
   flex-direction: column !important;
-
 }
 /* **********************************************
 cart-items-count */
 .cart-items-count {
   padding-left: 9px;
   padding-right: 9px;
-  -webkit-boder-radius:9px;
+  -webkit-boder-radius: 9px;
   border-radius: 9px;
-  -moz-border-radius:9px;
-  font-style: 12px;background-color: #ff0000;
+  -moz-border-radius: 9px;
+  font-style: 12px;
+  background-color: #ff0000;
   color: white;
   padding: 0 5px;
   vertical-align: top;
   margin-left: 0px;
 }
 /* ****************************************formStyle******************* */
-.formStyle{
- 
+.formStyle {
   height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.formStyle>form{
+.formStyle > form {
   min-height: 300px;
   border: 1px solid black;
   border-radius: 5px;
@@ -147,27 +156,45 @@ cart-items-count */
   justify-content: center;
   align-items: center;
 }
-.formStyle>form>label{
+.formStyle > form > label {
   display: flex;
   justify-content: start;
 }
-.formStyle>form>input{
+.formStyle > form > input {
   border: none;
   border-radius: 5px;
   height: 40px;
-  border: 1px solid rgb(136, 136, 136);
+  /* border: 1px solid rgb(136, 136, 136); */
   padding-left: 10px;
 }
-.formHide{
+.formHide {
   transform: translateX(-100%);
   opacity: 0;
 }
-.animatSignForm{
+.animatSignForm {
   transform: translateX(0px);
   opacity: 1;
-
 }
-.animateLogForm{
+.animateLogForm {
   transform: translateX(100%);
   opacity: 0;
+}
+.gradient {
+  background: #200122; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6f0000,
+    #200122
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6f0000,
+    #200122
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+/* ******************************** */
+.navShop{
+ background-color: #200122;
+  position: fixed;
+
 }

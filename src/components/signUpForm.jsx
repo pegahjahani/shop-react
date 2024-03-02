@@ -4,11 +4,11 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export const SignUp = ({ setFlag, setShowForm}) => {
+export const SignUp = ({ setFlag, setShowForm , getUserData}) => {
   const [registerData , setRegisterData] = useState({ firstName: '', lastName: '', userName: '', password: '' , confirmPassword:'' })
-  
+ 
   const schema = yup.object().shape({
     firstName: yup.string().required("firstName is required!"),
     lastName: yup.string().required(),
@@ -24,21 +24,22 @@ export const SignUp = ({ setFlag, setShowForm}) => {
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(schema) });
+
   const registerForm = async (info) => {
     let res = await axios.post('http://localhost:2000/users', JSON.parse(JSON.stringify(info)))
     console.log('res', res);
     if (res.status === 201) {
          setRegisterData(res.data)
+       
     
     }
     
 };
   const onSubmitForm = (data) => {
     registerForm(data)
-    setRegisterData(data)
-    console.log(data);
-    setFlag(false)
-       
+    setRegisterData('')
+    setFlag(false) 
+    
    };
  
   return (
@@ -106,9 +107,9 @@ export const SignUp = ({ setFlag, setShowForm}) => {
         {...register("confirmPassword")}
       />
       {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
-      <div className="col-12">
+      <div className="col-12 d-flex justify-content-center align-items-center">
         <button
-          className="col-5 btn  mb-1"
+          className="col-5 btn  mb-1 mt-1"
           style={{ backgroundColor: "#79AC78", color: "white" }}
         >
           signUp

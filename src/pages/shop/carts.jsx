@@ -9,7 +9,6 @@ export const Carts = ({ listProducts }) => {
     return  prev + current.price
 
   } , 0)
-  console.log('helloo');
   
   return (
     <>
