@@ -6,7 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const SignUp = ({ setFlag, setShowForm , getUserData}) => {
+export const SignUp = ({ setFlag, setShowForm  , showForm }) => {
   const [registerData , setRegisterData] = useState({ firstName: '', lastName: '', userName: '', password: '' , confirmPassword:'' })
  
   const schema = yup.object().shape({
@@ -27,7 +27,7 @@ export const SignUp = ({ setFlag, setShowForm , getUserData}) => {
 
   const registerForm = async (info) => {
     let res = await axios.post('http://localhost:2000/users', JSON.parse(JSON.stringify(info)))
-    console.log('res', res);
+  
     if (res.status === 201) {
          setRegisterData(res.data)
        
@@ -43,15 +43,16 @@ export const SignUp = ({ setFlag, setShowForm , getUserData}) => {
    };
  
   return (
-    <form className="col-5 gap-2" onSubmit={handleSubmit(onSubmitForm)}>
-      <div className="col-12 d-flex justify-content-end px-3 align-items-center mt-3">
+   <div className="formSign">
+     <form className="col-5 gap-2" onSubmit={handleSubmit(onSubmitForm)}>
+      {/* <div className="col-12 d-flex justify-content-end px-3 align-items-center mt-5">
         <CloseIcon
           onClick={() => {
             setShowForm(false);
           }}
         />
-      </div>
-      <label className="col-10" htmlFor="firstName">
+      </div> */}
+      <label className="col-10 mt-4" htmlFor="firstName">
         firstName :
       </label>
       <input
@@ -110,14 +111,14 @@ export const SignUp = ({ setFlag, setShowForm , getUserData}) => {
       <div className="col-12 d-flex justify-content-center align-items-center">
         <button
           className="col-5 btn  mb-1 mt-1"
-          style={{ backgroundColor: "#79AC78", color: "white" }}
+          style={{ backgroundColor: "#200122", color: "white" }}
         >
           signUp
         </button>
       </div>
       <div
         className="col-12 d-flex justify-content-start px-3 align-items-center mt-1 mb-1"
-        style={{ color: "darkgreen", cursor: "pointer" }}
+        style={{ color: "#200122", cursor: "pointer" }}
       >
         <KeyboardReturnIcon
           onClick={() => {
@@ -126,5 +127,6 @@ export const SignUp = ({ setFlag, setShowForm , getUserData}) => {
         />
       </div>
     </form>
+   </div>
   );
 };

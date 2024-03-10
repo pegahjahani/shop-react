@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faShoppingCart } from "@fortawesome/free-solid-svg-icons"
-import { useContext } from "react"
+import { Suspense, useContext } from "react"
 import { ShopContext } from "../context/shopContext"
 import LogoutIcon from '@mui/icons-material/Logout'; 
+import { Loading } from "./loading"
 
 
 
@@ -14,10 +15,11 @@ export const NavBar = ()=>{
 
     } , 0)
     return(
-        <div className="navbar navbar-dark  navbar-expend-lg navShop col-12 mt-2">
-            <div className="container">
+     
+            <div className="navbar navbar-dark navbar-expend-lg navShop col-12  navPro">
+            <div className="container  col-12">
                 <h2 className="navbar-brand">{data.userName} shop</h2>
-                <ul className="navbar-nav styleMenu">
+                <ul className="navbar-nav styleMenu col-4">
                     <li className="nav-item listNavShop">
                         <Link to="/shoping">shop</Link> 
                     </li>
@@ -39,5 +41,6 @@ export const NavBar = ()=>{
                 </ul>
             </div>
         </div>
+       
     )
 }

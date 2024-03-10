@@ -27,14 +27,14 @@ export const Carts = ({ listProducts }) => {
                    <img src={item.image} className="col-12" />
                  </figure>
                  <div className="col-10 row">
-                   <span className="col-12">
+                   <span className="col-12 text-dark">
                      title :{item.title.slice(0, 10)}
                    </span>
-                   <span className="col-12">
+                   <span className="col-12 text-dark">
                      count :
                      {cartItems?.filter((row) => row.id === item.id)[0]?.count}
                    </span>
-                   <span className="col-12">
+                   <span className="col-12 text-dark">
                      price :
                      
                     {cartItems?.filter((row) => row.id === item.id)[0]?.price}

@@ -1,12 +1,14 @@
-import { useContext } from "react";
+import { Suspense, useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
+import { Loading } from "../../components/loading";
 export const Products = ({ listProducts }) => {
   const {cartItems , addToCart , removeFromCart} = useContext(ShopContext)
 
   return (
-    <div className=" listBox">
+   <Suspense fallback={<Loading/>}>
+     <div className=" listBox">
       {listProducts &&
         listProducts.map((item) => {
           const itemId = item.id
@@ -18,19 +20,19 @@ export const Products = ({ listProducts }) => {
               </figure>
               <div className="descItem col-9">
                 <h2 className="mt-2">
-                  <span className="text-light h5">title:</span>
+                  <span className="text-dark h5">title:</span>
                   {item.title.slice(0 , 10)}
                 </h2>
                 <p>
-                  <span className="text-light h5">description :</span>
+                  <span className="text-dark h5">description :</span>
                   {item.description}
                 </p>
                 <p>
-                  <span className="text-light h5">category :</span>
+                  <span className="text-dark h5">category :</span>
                   {item.category}
                 </p>
                 <p>
-                  <span className="text-light h5">price:</span>
+                  <span className="text-dark h5">price:</span>
                   {item.price}
                 </p>
                 <div className="col-12 gap-5 d-flex justify-content-center align-items-center py-2">
@@ -49,5 +51,6 @@ export const Products = ({ listProducts }) => {
           );
         })}
     </div>
+   </Suspense>
   );
 };

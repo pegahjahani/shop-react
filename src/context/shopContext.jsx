@@ -91,8 +91,8 @@ export const ShopContextProvider = (props) => {
           if(data !== undefined){
               localStorage.setItem("setuserData" , JSON.stringify(data))
             }
+            return true;
             setData({ userName: "", password: "" });
-          return true;
         }
       });
     }
@@ -114,7 +114,8 @@ export const ShopContextProvider = (props) => {
     login,
     data,
     setData,
-    logOut
+    logOut,
+
     
   };
   return (

@@ -1,39 +1,27 @@
-import {react , createContext, useState, useEffect} from 'react';
-import Navigat from './components/navigation';
-import './App.css';
-import { Home } from './pages/home';
-import { Shoping } from './pages/shoping';
-import { BrowserRouter as Router , Route , Routes } from 'react-router-dom';
-import axios from 'axios';
-import { Provider } from 'react-redux';
-import { store } from './components/store';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import './App.css';
+import {createContext} from 'react';
+import Navigat from './components/navigation';
+import { Home } from './pages/home';
+import { Shoping } from './pages/shoping';
+import { BrowserRouter as Router , Route , Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { LogForShop } from './pages/login';
 
 
 
 export const dataContext = createContext()
 function App() {
-  const [dataList , setDataList] = useState({})
-  const getData = async ()=>{
-   const response = await axios.get('https://jsonplaceholder.typicode.com/users')
-   setDataList(response.data)
-  
-  }
-  useEffect(()=>{
-    getData()
-  } , [])
+
   return (
    
-    <Provider store={store}>
     <div className="App gradient">
-      <dataContext.Provider value={[dataList , setDataList]}>
+    
     <Router>
-      <div className=' navigatMenu col-12'>
+      <div className=' navigatMenu col-12 container-fluid'>
         <Navigat/>
       </div>
       <Routes>
@@ -43,9 +31,8 @@ function App() {
 
       </Routes>
     </Router>
-    </dataContext.Provider>
-    </div>
-    </Provider>
+ </div>
+
   );
 }
 

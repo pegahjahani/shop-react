@@ -2,13 +2,14 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useContext, useState } from "react";
 import { ShopContext } from "../context/shopContext";
 import { SignUp } from "./signUpForm";
-export const Form = ({ setShowForm }) => {
+export const Form = () => {
   const {
     login,
     data,
     setData,
   } = useContext(ShopContext);
   const [flag, setFlag] = useState(false);
+  const [showForm , setShowForm] = useState(true)
 
   return (
     
@@ -23,14 +24,14 @@ export const Form = ({ setShowForm }) => {
             }}
           >
             
-            <div className="col-12 d-flex justify-content-end px-3 align-items-center mt-3">
+            {/* <div className="col-12 d-flex justify-content-end px-3 align-items-center mt-3">
               <CloseIcon
                 onClick={() => {
                   setShowForm(false);
                 }}
               />
-            </div>
-            <label className="col-10" htmlFor="userName">
+            </div> */}
+            <label className="col-10 mt-4" htmlFor="userName">
               username :
             </label>
             <input
@@ -65,7 +66,7 @@ export const Form = ({ setShowForm }) => {
             <div className="col-12 d-flex flex-wrap justify-content-center align-items-center gap-2">
               <button
                 className="col-8 btn"
-                style={{ backgroundColor: "#004225", color: "white" }}
+                style={{ backgroundColor: "white", color: "red" }}
                 onClick={() => {
                   login();
                 }}
@@ -78,7 +79,7 @@ export const Form = ({ setShowForm }) => {
                 onClick={() => {
                   setFlag(true);
                 }}
-                style={{ border: "1px solid darkblue" }}
+                style={{ border: "1px solid white" , color:"white" }}
               >
                 signUp
               </button>

@@ -1,36 +1,33 @@
+* {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+}
+
 .App {
- display: flex;
- justify-content: center;
- align-items: start;
- flex-wrap: wrap;
- min-height: 100vh;
- color: white;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  color: white;
 }
 .pagesStyle {
-  padding-top: 40px;
+  padding-top: 80px !important;
   margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   /* border: 1px solid gray; */
-
 }
 .navigatMenu {
   position: fixed;
   height: 40px;
   top: 0 !important;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .App-header {
   background-color: #282c34;
@@ -42,18 +39,15 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.navigateShop {
+  position: fixed;
+  margin-top: 0px !important;
+  padding: 10px !important;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navPro {
+  position: fixed;
+  margin-top: 40px !important;
+  padding: 5px !important;
 }
 
 /* ********************************************************* */
@@ -86,25 +80,26 @@
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
   gap: 10px;
-  padding-top: 80px;
+  padding-top: 80px !important;
+  margin-top: 98px;
 }
 .itemBox {
   width: 80%;
-  /* border: 1px solid black; */
   display: flex;
   justify-content: start;
   align-items: center;
   margin-top: 20px;
-  /* background-color: aliceblue; */
+  background-color: white;
+  color: #200122;
 }
 .imageItem {
   width: 20%;
   height: 250px;
   overflow: hidden;
-  padding: 5px;
+  padding: 5px !important;
   border-radius: 5px;
 }
 .imageItem > img {
@@ -117,7 +112,13 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding-right: 5px;
+  padding-right: 5px !important;
+}
+input::placeholder{
+padding: 5px !important;
+}
+input{
+  padding: 5px !important;
 }
 /* ******************************************
 caaaaaaaaaaaaaaaaart */
@@ -193,8 +194,43 @@ cart-items-count */
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 /* ******************************** */
-.navShop{
- background-color: #200122;
+.navShop {
+  background-color: #200122;
   position: fixed;
-
+}
+.parentImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imageFrame {
+  width: 300px;
+  height: 300px;
+}
+.imageFrame > img {
+  width: 300px !important;
+  height: 300px !important;
+  object-fit: cover !important;
+}
+.secondPara {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.formSign {
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  padding-top: 80px !important;
+}
+.formSign > form {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
